@@ -1,0 +1,22 @@
+@import "_variables";
+
+.log-in-bg {
+  background: var(--background-gradient) !important;
+}
+
+.log-in-container {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--dark-box);
+  border-radius: 20px 0 20px 0;
+}
+
+.logo {
+  background-image: url(/images/logo.webp);
+  min-height: 20vh;
+  @extend .image-default;
+}
+
+.register-link {
+  text-align: center;
+}

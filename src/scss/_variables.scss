@@ -1,0 +1,35 @@
+:root {
+  --text-color: white;
+  --dark-box: rgba(40, 40, 40);
+  --background-gradient: linear-gradient(rgba(0, 60, 0), rgba(0, 100, 0));
+  --background: #2c5f2d;
+}
+
+$primary: rgba(0, 100, 0);
+
+body {
+  min-height: 100vh;
+  background-image: url(/images/background.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.form-label {
+  color: var(--text-color);
+}
+
+.image-default {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.image-sizing {
+  width: 10vw;
+  height: 10vw;
+  min-width: 70px;
+  min-height: 70px;
+  max-width: 120px;
+  max-height: 120px;
+  border-radius: 100%;
+}
