@@ -1,8 +1,9 @@
 :root {
   --text-color: white;
-  --dark-box: rgba(40, 40, 40);
-  --background-gradient: linear-gradient(rgba(0, 60, 0), rgba(0, 100, 0));
+  --dark-box: #222222;
+  --background-dark: #14340e;
   --background: #2c5f2d;
+  --interaction-bg: rgba(0, 60, 0, 0.7);
 }
 
 $primary: rgba(0, 100, 0);
@@ -12,6 +13,15 @@ body {
   background-image: url(/images/background.png);
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+header,
+footer {
+  background-color: var(--interaction-bg);
+}
+
+.posts-container {
+  margin-top: 4vw !important;
 }
 
 .form-label {
@@ -32,4 +42,18 @@ body {
   max-width: 120px;
   max-height: 120px;
   border-radius: 100%;
+}
+
+.dark-button {
+  background-color: var(--dark-box);
+  color: var(--text-color);
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.dark-button:hover {
+  background-color: var(--text-color);
+  color: var(--dark-box);
 }

@@ -1,9 +1,5 @@
 @import "_variables.scss";
 
-header {
-  background-color: rgba(0, 60, 0, 0.5);
-}
-
 .header-logo {
   background-image: url(/images/logo.webp);
   min-height: 70px;
@@ -24,10 +20,6 @@ header {
   border: none;
 }
 
-.posts-container {
-  margin-top: 4vw !important;
-}
-
 .post1 {
   color: var(--text-color);
 }
@@ -42,6 +34,10 @@ header {
   min-height: 100px;
   position: relative;
   padding-block: 10px;
+}
+.time-posted {
+  color: var(--text-color);
+  text-align: right;
 }
 
 .post-content-text {
@@ -65,10 +61,6 @@ header {
   @extend .image-sizing;
 }
 
-footer {
-  background-color: var(--background);
-}
-
 .profile-image {
   background-image: url(/images/logo.webp);
   width: 10vw;
@@ -85,6 +77,6 @@ footer {
 }
 
 .make-post-features {
-  background-color: var(--dark-box);
+  background-color: var(--background-dark);
   padding: 5px;
 }

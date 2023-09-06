@@ -51,10 +51,12 @@
     <main class="row">
       <div class="posts-container container-fluid col-9">
         <div class="post1">
-          <a href="#" class="user-name">User Name</a>
-          <p class="user-name mb-0">24.october 1996</p>
+          <div class="post-info d-flex justify-content-between">
+            <a href="/profile.html" class="user-name">User Name</a>
+            <p class="time-posted mb-0">24.october 1996</p>
+          </div>
           <div class="post-content">
-            <span class="user-post-image"></span>
+            <a href="/profile.html" class="user-post-image"></a>
             <p class="post-content-text">
               Hey! I saw you adding that new game to the mix! looks hype.
             </p>
@@ -72,11 +74,14 @@
       <div
         class="container-fluid d-flex justify-content-center col-md-9 col-11"
       >
-        <div class="profile-image"></div>
+        <a href="/profile.html" class="profile-image"></a>
         <form class="post-text-form w-100">
-          <textarea class="post-text h-100"></textarea>
+          <textarea
+            class="post-text h-100"
+            placeholder="Write something about your day!"
+          ></textarea>
           <div class="make-post-features w-100 d-flex justify-content-end">
-            <button class="submit-post-button btn btn-primary">Post</button>
+            <button class="dark-button">Post</button>
           </div>
         </form>
       </div>

@@ -3,7 +3,70 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta name="description" content="View and edit your profile." />
+    <link href="/dist/css/styles.css" rel="stylesheet" />
+    <title>Profile Page</title>
   </head>
-  <body></body>
+  <body>
+    <header class="row">
+      <div
+        class="header-container container-fluid d-flex flex-direction-row align-items-center"
+      >
+        <a href="/index.html" class="header-logo"></a>
+        <div class="interactions d-flex w-100 justify-content-center">
+          <div class="dropdown">
+            <button
+              class="filter-button dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+            >
+              Filter
+            </button>
+            <ul class="dropdown-menu p-2">
+              <li>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="filter1"
+                  />
+                  <label class="form-check-label" for="filter1">Filter 1</label>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <form class="search-form d-flex">
+            <input type="text" placeholder="Search" class="searchbar" />
+            <button class="search-button">S</button>
+          </form>
+        </div>
+      </div>
+    </header>
+    <main class="main-container row">
+      <div class="profile-info-container pt-5 col-4">
+        <div class="profile-image-big"></div>
+        <a href="/profile.html" class="profile-name my-3">User Name</a>
+        <button class="dark-button">Edit Profile</button>
+      </div>
+      <div class="posts-container container col-7">
+        <div class="post1">
+          <div class="post-info d-flex justify-content-between">
+            <a href="/profile.html" class="user-name">User Name</a>
+            <p class="time-posted mb-0">24.october 1996</p>
+          </div>
+          <div class="post-content">
+            <a href="/profile.html" class="user-post-image"></a>
+            <p class="post-content-text">
+              Hey! I saw you adding that new game to the mix! looks hype.
+            </p>
+            <div class="post-interactions d-flex justify-content-end">
+              <a href="#">Comment</a>
+              <a href="#" class="ms-3">Like</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>
