@@ -1,11 +1,7 @@
 @import "_variables.scss";
 
 .profile-info-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   background-color: var(--interaction-bg);
-  min-height: 100vh;
 }
 
 .profile-image-big {
