@@ -81,6 +81,10 @@ footer {
   text-align: center;
 }
 
+.modal-title {
+  color: var(--text-color);
+}
+
 :root {
   --text-color: white;
   --dark-box: #222222;
