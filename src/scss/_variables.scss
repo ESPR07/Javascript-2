@@ -8,10 +8,8 @@
 
 $primary: rgba(0, 100, 0);
 
-$body-color: white;
-
 body {
-  min-height: 100vh;
+  min-height: 103vh;
   background-image: url(/images/background.png);
   background-size: cover;
   background-repeat: no-repeat;
@@ -23,7 +21,11 @@ footer {
 }
 
 .posts-container {
-  margin-top: 4vw !important;
+  margin-top: 60px !important;
+}
+
+.modal-dialog * {
+  background-color: var(--dark-box);
 }
 
 .form-label {

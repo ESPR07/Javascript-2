@@ -5,20 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Log in to start your journey!" />
     <link href="/dist/css/styles.css" rel="stylesheet" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
     <title>Log In Page</title>
   </head>
   <body class="log-in-bg vh-100 d-flex align-items-center">
+    <div
+      class="modal fade"
+      id="register-modal"
+      tabindex="-1"
+      aria-labelledby="register-modal-label"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="register-modal-label">
+              Register Account
+            </h1>
+          </div>
+          <div class="modal-body">
+            <form class="register-form" action="/feed.html">
+              <label for="email" class="form-label">Email:</label>
+              <input
+                type="email"
+                id="email"
+                class="form-control register-email"
+                required
+              />
+              <label for="password" class="form-label">Password:</label>
+              <input
+                type="password"
+                id="password"
+                class="form-control register-email"
+                required
+              />
+              <button class="btn btn-primary mt-3 w-100">Register</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="log-in-container container col-md-6 col-11 p-5">
       <div class="logo"></div>
       <form class="log-in-form" action="/feed.html">
         <label for="email" class="form-label">Email:</label>
-        <input type="email" id="email" class="form-control" required />
+        <input
+          type="email"
+          id="email"
+          class="form-control log-in-email"
+          required
+        />
         <label for="password" class="form-label">Password:</label>
-        <input type="password" id="password" class="form-control" required />
+        <input
+          type="password"
+          id="password"
+          class="form-control log-in-email"
+          required
+        />
         <button class="btn btn-primary mt-3 w-100">Log In</button>
       </form>
-      <a href="#" class="register-link mt-3"
-        >Don't have an account? Click Here</a
+      <a
+        href="#"
+        class="register-link mt-3"
+        data-bs-toggle="modal"
+        data-bs-target="#register-modal"
+      >
+        Don't have an account? Click Here</a
       >
     </div>
   </body>

@@ -8,7 +8,7 @@
 }
 
 body {
-  min-height: 100vh;
+  min-height: 103vh;
   background-image: url(/images/background.png);
   background-size: cover;
   background-repeat: no-repeat;
@@ -20,7 +20,11 @@ footer {
 }
 
 .posts-container {
-  margin-top: 4vw !important;
+  margin-top: 60px !important;
+}
+
+.modal-dialog * {
+  background-color: var(--dark-box);
 }
 
 .form-label {
@@ -86,7 +90,7 @@ footer {
 }
 
 body {
-  min-height: 100vh;
+  min-height: 103vh;
   background-image: url(/images/background.png);
   background-size: cover;
   background-repeat: no-repeat;
@@ -98,7 +102,11 @@ footer {
 }
 
 .posts-container {
-  margin-top: 4vw !important;
+  margin-top: 60px !important;
+}
+
+.modal-dialog * {
+  background-color: var(--dark-box);
 }
 
 .form-label {
@@ -185,10 +193,7 @@ footer {
 
 .user-post-image {
   background-image: url(/images/logo.webp);
-  width: 10vw;
-  height: 10vw;
   position: absolute;
-  border-radius: 100%;
   top: -3.5rem;
   left: -5vw;
   border: 4px solid var(--background);
@@ -196,15 +201,13 @@ footer {
 
 .profile-image {
   background-image: url(/images/logo.webp);
-  width: 10vw;
-  height: 10vw;
   border: 3px solid var(--text-color);
-  margin-right: 5vw;
 }
 
 .post-text-form {
   display: flex;
   flex-direction: column;
+  padding-left: 5vw;
 }
 
 .make-post-features {
@@ -221,7 +224,7 @@ footer {
 }
 
 body {
-  min-height: 100vh;
+  min-height: 103vh;
   background-image: url(/images/background.png);
   background-size: cover;
   background-repeat: no-repeat;
@@ -233,7 +236,11 @@ footer {
 }
 
 .posts-container {
-  margin-top: 4vw !important;
+  margin-top: 60px !important;
+}
+
+.modal-dialog * {
+  background-color: var(--dark-box);
 }
 
 .form-label {
@@ -282,6 +289,10 @@ footer {
   min-height: 70px;
   border-radius: 100%;
   border: 3px solid var(--text-color);
+}
+
+.user-info {
+  color: var(--text-color);
 }
 
 /*!
@@ -363,18 +374,18 @@ footer {
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
-  --bs-body-color: white;
-  --bs-body-color-rgb: 255, 255, 255;
+  --bs-body-color: #212529;
+  --bs-body-color-rgb: 33, 37, 41;
   --bs-body-bg: #fff;
   --bs-body-bg-rgb: 255, 255, 255;
   --bs-emphasis-color: #000;
   --bs-emphasis-color-rgb: 0, 0, 0;
-  --bs-secondary-color: rgba(255, 255, 255, 0.75);
-  --bs-secondary-color-rgb: 255, 255, 255;
+  --bs-secondary-color: rgba(33, 37, 41, 0.75);
+  --bs-secondary-color-rgb: 33, 37, 41;
   --bs-secondary-bg: #e9ecef;
   --bs-secondary-bg-rgb: 233, 236, 239;
-  --bs-tertiary-color: rgba(255, 255, 255, 0.5);
-  --bs-tertiary-color-rgb: 255, 255, 255;
+  --bs-tertiary-color: rgba(33, 37, 41, 0.5);
+  --bs-tertiary-color-rgb: 33, 37, 41;
   --bs-tertiary-bg: #f8f9fa;
   --bs-tertiary-bg-rgb: 248, 249, 250;
   --bs-heading-color: inherit;
@@ -4156,7 +4167,7 @@ textarea.form-control-lg {
   --bs-navbar-toggler-padding-y: 0.25rem;
   --bs-navbar-toggler-padding-x: 0.75rem;
   --bs-navbar-toggler-font-size: 1.25rem;
-  --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2833, 37, 41, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
   --bs-navbar-toggler-border-color: rgba(var(--bs-emphasis-color-rgb), 0.15);
   --bs-navbar-toggler-border-radius: var(--bs-border-radius);
   --bs-navbar-toggler-focus-width: 0.25rem;
@@ -4766,7 +4777,7 @@ textarea.form-control-lg {
   --bs-accordion-btn-padding-y: 1rem;
   --bs-accordion-btn-color: var(--bs-body-color);
   --bs-accordion-btn-bg: var(--bs-accordion-bg);
-  --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
   --bs-accordion-btn-icon-width: 1.25rem;
   --bs-accordion-btn-icon-transform: rotate(-180deg);
   --bs-accordion-btn-icon-transition: transform 0.2s ease-in-out;
