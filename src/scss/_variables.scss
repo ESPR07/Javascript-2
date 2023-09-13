@@ -7,10 +7,11 @@
 }
 
 $primary: rgba(0, 100, 0);
+$grid-gutter-width: 0;
 
 body {
-  min-height: 103vh;
-  background-image: url(/images/background.webp);
+  min-height: 100vh;
+  background-image: url("/images/background.webp");
   background-size: cover;
   background-repeat: no-repeat;
 }
