@@ -61,6 +61,10 @@ footer {
   color: var(--dark-box);
 }
 
+.hidden {
+  display: none;
+}
+
 .log-in-bg {
   background: var(--background-dark) !important;
 }
@@ -145,6 +149,10 @@ footer {
 .dark-button:hover {
   background-color: var(--text-color);
   color: var(--dark-box);
+}
+
+.hidden {
+  display: none;
 }
 
 .header-logo {
@@ -279,6 +287,10 @@ footer {
 .dark-button:hover {
   background-color: var(--text-color);
   color: var(--dark-box);
+}
+
+.hidden {
+  display: none;
 }
 
 .profile-info-container {

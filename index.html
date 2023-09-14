@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Log in to start your journey!" />
+    <link rel="icon" href="/images/tab-icon.webp">
     <link href="/dist/css/styles.css" rel="stylesheet" />
     <script type="module" src="/js/components/register.mjs"></script>
     <script
@@ -30,21 +31,35 @@
           </div>
           <div class="modal-body">
             <form class="register-form" action="/feed.html">
+              <label for="name" class="form-label">Username:</label>
+              <input
+                type="name"
+                id="name"
+                class="form-control register-name"
+                placeholder = "eg. John Smith"
+                required
+              />
               <label for="email" class="form-label">Email:</label>
               <input
                 type="email"
                 id="email"
                 class="form-control register-email"
+                placeholder = "@noroff.no or @stud.noroff.no adresses"
                 required
               />
+              <p class="hidden email-error text-danger text-center mt-2">Must be a noroff.no or stud.noroff.no adress</p>
               <label for="password" class="form-label">Password:</label>
               <input
                 type="password"
                 id="password"
                 class="form-control register-password"
+                placeholder = "min 8 characters"
                 required
+                min-length = "8"
               />
-              <button class="btn btn-primary mt-3 w-100">Register</button>
+              <p class="hidden password-error text-danger text-center mt-2">Password must be at least 8 characters</p>
+              <button class="submit-register btn btn-primary mt-3 w-100">Register</button>
+              <p class="hidden register-error-message text-danger text-center mt-2">Account already exists</p>
             </form>
           </div>
         </div>
@@ -66,6 +81,7 @@
           id="password"
           class="form-control log-in-email"
           required
+          min-length = "8"
         />
         <button class="btn btn-primary mt-3 w-100">Log In</button>
       </form>
