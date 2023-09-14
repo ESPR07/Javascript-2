@@ -42,7 +42,6 @@ function registerUser() {
         "Content-type": "application/json; charset=UTF-8",
       },
     };
-    console.log(newAccountInfo);
     fetch(API_SOCIAL_REGISTER_URL, newAccountInfo)
       .then((response) => response.json())
       .then((json) => displayErrorMessage(json))
@@ -90,7 +89,6 @@ function lengthValidator(value, compareValue) {
  * @param {object} json Insert a json from a fetch 
  */
 function displayErrorMessage(json) {
-  console.log(json);
   if(json.statusCode = 400) {
     registerErrorMessage.classList.remove("hidden");
   } else {
