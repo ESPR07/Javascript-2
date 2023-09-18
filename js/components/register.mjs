@@ -6,9 +6,9 @@ const registerForm = document.querySelector(".register-form");
 const submitRegister = document.querySelector(".submit-register");
 const registerErrorMessage = document.querySelector(".register-error-message");
 
-const testAPI =
-  "https://jsonplaceholder.typicode.com/todos/1"; /*testing purpose, delete when done*/
-
+/**
+ * A Function for registering the user, it checks for valid email and password as well as posts the info to the server.
+ */
 function registerUser() {
   event.preventDefault();
   const registerNameInput = document.querySelector(".register-name").value;
@@ -43,10 +43,6 @@ function registerUser() {
       },
     };
     apiFetch(API_SOCIAL_REGISTER_URL, newAccountInfo, displayErrorMessage)
-    // fetch(API_SOCIAL_REGISTER_URL, newAccountInfo)
-    //   .then((response) => response.json())
-    //   .then((json) => displayErrorMessage(json))
-    //   .catch((error) => console.log(error));
   }
 }
 

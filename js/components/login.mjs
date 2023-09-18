@@ -23,18 +23,12 @@ function login(event) {
   };
 
   apiFetch(API_SOCIAL_LOGIN_URL, accountInfo, setToken);
-
-  // fetch(API_SOCIAL_LOGIN_URL, accountInfo)
-  //   .then((response) => (response.json()))
-  //   .then((json) => setToken(json.accessToken))
-  //   .catch((error) => console.log(error));
 }
 
 function setToken(json) {
-  console.log("TEST!");
   console.log(json);
   localStorage.setItem("userToken", json.accessToken);
-  // window.location.href = "/feed.html";
+  window.location.href = "/feed.html";
 }
 
 loginButton.addEventListener("click", login);
