@@ -1,6 +1,6 @@
-export function apiFetch(url, userData) {
+export function apiFetch(url, userData, successHandler, errorHandler = (error) => console.log(error)) {
   fetch(url, userData)
   .then((response) => response.json())
-  .then((json) => {return (json)})
-  .catch((error) => console.log(error));
+  .then((json) => successHandler(json))
+  .catch((error) => errorHandler(error));
 }

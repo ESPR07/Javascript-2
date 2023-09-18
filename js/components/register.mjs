@@ -42,10 +42,11 @@ function registerUser() {
         "Content-type": "application/json; charset=UTF-8",
       },
     };
-    fetch(API_SOCIAL_REGISTER_URL, newAccountInfo)
-      .then((response) => response.json())
-      .then((json) => displayErrorMessage(json))
-      .catch((error) => console.log(error));
+    apiFetch(API_SOCIAL_REGISTER_URL, newAccountInfo, displayErrorMessage)
+    // fetch(API_SOCIAL_REGISTER_URL, newAccountInfo)
+    //   .then((response) => response.json())
+    //   .then((json) => displayErrorMessage(json))
+    //   .catch((error) => console.log(error));
   }
 }
 

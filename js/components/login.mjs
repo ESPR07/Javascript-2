@@ -1,11 +1,12 @@
 import { API_BASE_URL } from "../index.mjs";
+import { apiFetch } from "./apiFetch.mjs";
 const API_SOCIAL_LOGIN_PATH = "/social/auth/login";
 const API_SOCIAL_LOGIN_URL = API_BASE_URL + API_SOCIAL_LOGIN_PATH;
 
 const loginForm = document.querySelector(".log-in-form");
 const loginButton = document.querySelector(".log-in-button");
 
-function login() {
+function login(event) {
   event.preventDefault();
   const loginEmail = document.querySelector(".log-in-email").value;
   const loginPassword = document.querySelector(".log-in-password").value;
@@ -21,15 +22,19 @@ function login() {
     },
   };
 
-  fetch(API_SOCIAL_LOGIN_URL, accountInfo)
-    .then((response) => (response.json()))
-    .then((json) => setToken(json.accessToken))
-    .then(() => window.location.href = "/feed.html")
-    .catch((error) => console.log(error));
-};
+  apiFetch(API_SOCIAL_LOGIN_URL, accountInfo, setToken);
 
-function setToken(JSON) {
-  localStorage.setItem("userToken", JSON)
+  // fetch(API_SOCIAL_LOGIN_URL, accountInfo)
+  //   .then((response) => (response.json()))
+  //   .then((json) => setToken(json.accessToken))
+  //   .catch((error) => console.log(error));
+}
+
+function setToken(json) {
+  console.log("TEST!");
+  console.log(json);
+  localStorage.setItem("userToken", json.accessToken);
+  // window.location.href = "/feed.html";
 }
 
 loginButton.addEventListener("click", login);
