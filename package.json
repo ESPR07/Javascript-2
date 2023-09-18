@@ -4,7 +4,7 @@
   "description": "The course assignment for Javascript 2, tasking us with creating a social media page with all functions requested through Javascript.",
   "main": "index.js",
   "scripts": {
-    "dev-setup": "npm install bootstrap & npm install -D sass",
+    "dev-setup": "npm i bootstrap & npm i -D sass & npm i -D jsdoc",
     "build": "sass src/scss:dist/css",
     "watch": "sass --watch src/scss:dist/css"
   },
