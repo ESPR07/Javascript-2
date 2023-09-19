@@ -21,10 +21,6 @@ footer {
   background-color: var(--interaction-bg);
 }
 
-.post {
-  
-}
-
 .modal-dialog * {
   background-color: var(--dark-box);
 }
@@ -34,7 +30,7 @@ footer {
 }
 
 .image-default {
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }

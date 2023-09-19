@@ -28,7 +28,7 @@ footer {
 }
 
 .image-default, .profile-image-big, .profile-image, .user-post-image, .header-logo, .logo {
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -114,7 +114,7 @@ footer {
 }
 
 .image-default, .profile-image-big, .profile-image, .user-post-image, .header-logo, .logo {
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -249,7 +249,7 @@ footer {
 }
 
 .image-default, .profile-image-big, .logo, .header-logo, .user-post-image, .profile-image {
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
