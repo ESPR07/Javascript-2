@@ -1,7 +1,7 @@
 import { API_BASE_URL } from "./index.mjs";
 import { apiFetch } from "./components/apiFetch.mjs";
 const API_SOCIAL_POSTS_PATH = "/social/posts";
-const API_SOCIAL_POSTS_URL = API_BASE_URL + API_SOCIAL_POSTS_PATH;
+const API_SOCIAL_POSTS_URL = `${API_BASE_URL}${API_SOCIAL_POSTS_PATH}`;
 const cardSection = document.querySelector(".posts-container");
 const accessToken = localStorage.getItem("userToken");
 
@@ -78,7 +78,7 @@ function createHTML() {
             Authorization: `Bearer ${accessToken}`,
         },
     }
-    apiFetch(API_SOCIAL_POSTS_URL + "?limit=10&_author=true", authorizationHeader, postCardTemplate)
+    apiFetch(`${API_SOCIAL_POSTS_URL}?limit=10&_author=true`, authorizationHeader, postCardTemplate)
 }
 
 if(accessToken) {

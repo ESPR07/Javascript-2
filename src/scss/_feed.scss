@@ -5,6 +5,7 @@
   min-height: 70px;
   min-width: 70px;
   @extend .image-default;
+  background-size: contain !important;
 }
 
 .filter-button {

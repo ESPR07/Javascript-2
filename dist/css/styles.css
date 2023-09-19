@@ -75,6 +75,7 @@ footer {
 .logo {
   background-image: url(/images/logo.webp);
   min-height: 20vh;
+  background-size: contain !important;
 }
 
 .register-link {
@@ -151,6 +152,7 @@ footer {
   background-image: url(/images/logo.webp);
   min-height: 70px;
   min-width: 70px;
+  background-size: contain !important;
 }
 
 .filter-button {

@@ -27,6 +27,7 @@ function login(event) {
 
 function setToken(json) {
   localStorage.setItem("userToken", json.accessToken);
+  localStorage.setItem("username", json.name)
   window.location.href = "/feed.html";
 }
 

@@ -15,6 +15,7 @@
   background-image: url(/images/logo.webp);
   min-height: 20vh;
   @extend .image-default;
+  background-size: contain !important;
 }
 
 .register-link {
