@@ -6,11 +6,12 @@ const cardSection = document.querySelector(".posts-container");
 const accessToken = localStorage.getItem("userToken");
 const dateSelector = document.querySelector("#date-filter");
 const searchButton = document.querySelector(".search-button");
-const searchValue = document.querySelector(".searchbar").value;
 
 function postCardTemplate(json) {
-  json.forEach(({ body, created, author }) => {
-    if (created.includes(dateSelector.value) || author === searchValue) {
+  const searchValue = document.querySelector(".searchbar").value;
+  const filteredArray = json.filter((json) => json.created.includes(dateSelector.value));
+  const searchedArray = filteredArray.filter((json) => json.author.name.toLowerCase().includes(searchValue.toLowerCase()) || json.body && json.body.toLowerCase().includes(searchValue.toLowerCase()));
+  searchedArray.forEach(({ body, created, author }) => {
       const date = new Date(created);
       const formatDate = (date) => {
         return (
@@ -75,7 +76,6 @@ function postCardTemplate(json) {
       postDelete.classList.add("ms-3");
       postDelete.innerText = "Delete";
       postInteractions.append(postDelete);
-    }
   });
 }
 
