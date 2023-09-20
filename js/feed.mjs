@@ -7,6 +7,10 @@ const accessToken = localStorage.getItem("userToken");
 const dateSelector = document.querySelector("#date-filter");
 const searchButton = document.querySelector(".search-button");
 
+/**
+ * Function that renders the posts based on API response as well as filtering if a filter or searchword has been passed in.
+ * @param {object} json The JSON Response from API Call
+ */
 function postCardTemplate(json) {
   const searchValue = document.querySelector(".searchbar").value;
   const filteredArray = json.filter((json) =>
@@ -84,7 +88,10 @@ function postCardTemplate(json) {
   });
 }
 
-function createHTML(event) {
+/**
+ * Function that calls on all functions needed for HTML render.
+ */
+function createHTML() {
   const authorizationHeader = {
     headers: {
       Authorization: `Bearer ${accessToken}`,
@@ -103,6 +110,10 @@ if (accessToken) {
   window.location.href = "/index.html";
 }
 
+/**
+ * Function that resets HTML to accomodate searching and filter options when clicked.
+ * @param {*} event Avoids depricate warnings.
+ */
 function createHTMLFiltered(event) {
   event.preventDefault();
   cardSection.innerHTML = "";
