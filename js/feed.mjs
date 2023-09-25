@@ -1,9 +1,7 @@
-import { API_BASE_URL } from "./index.mjs";
+import { API_SOCIAL_POSTS_URL } from "./components/urls.mjs";
 import { apiFetch } from "./components/apiFetch.mjs";
 import { postCardTemplate } from "./components/renderHTML.mjs";
 import { makePost } from "./components/makePost.mjs";
-const API_SOCIAL_POSTS_PATH = "/social/posts";
-const API_SOCIAL_POSTS_URL = `${API_BASE_URL}${API_SOCIAL_POSTS_PATH}`;
 const accessToken = localStorage.getItem("userToken");
 const searchButton = document.querySelector(".search-button");
 const submitPostButton = document.querySelector(".submit-post-button");
