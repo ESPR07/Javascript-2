@@ -11,6 +11,7 @@
       integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
       crossorigin="anonymous"
     ></script>
+    <script type="module" src="/js/feed.mjs"></script>
     <title>Profile Page</title>
   </head>
   <body>
@@ -30,15 +31,14 @@
             </button>
             <ul class="dropdown-menu p-2">
               <li>
-                <div class="form-check">
+                <form class="date-filter">
+                  <label class="form-check-label" for="date-filter">Posted:</label>
                   <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value=""
-                    id="filter1"
+                    type="date"
+                    id="date-filter"
+                    name="sort-post"
                   />
-                  <label class="form-check-label" for="filter1">Filter 1</label>
-                </div>
+                </form>
               </li>
             </ul>
           </div>
@@ -68,26 +68,26 @@
           </div>
         </div>
         <div class="posts-container container col-md-7 col-11">
-          <div class="post">
-            <div
-              class="post-info d-flex justify-content-between align-items-end"
-            >
-              <a href="/profile.html" class="user-name fs-4">User Name</a>
-              <p class="time-posted mb-0">24.october 1996</p>
-            </div>
-            <div class="post-content">
-              <a href="/profile.html" class="user-post-image"></a>
-              <p class="post-content-text">
-                Hey! I saw you adding that new game to the mix! looks hype.
-              </p>
-              <div class="post-interactions d-flex justify-content-end">
-                <a href="#">Comment</a>
-                <a href="#" class="ms-3">Like</a>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </main>
+    <footer
+    class="make-posts row d-flex justify-content-center sticky-bottom py-4"
+  >
+    <div
+      class="container-fluid d-flex justify-content-center align-items-center col-md-9 col-11"
+    >
+      <a href="/profile.html" class="profile-image"></a>
+      <form class="post-text-form w-100">
+        <textarea
+          class="post-text h-100"
+          placeholder="Write something about your day!"
+        ></textarea>
+        <div class="make-post-features w-100 d-flex justify-content-end">
+          <button class="dark-button">Post</button>
+        </div>
+      </form>
+    </div>
+  </footer>
   </body>
 </html>
