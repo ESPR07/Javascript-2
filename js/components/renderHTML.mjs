@@ -1,3 +1,5 @@
+import { deletePost } from "./postInteractions.mjs";
+import { updatePost } from "./postInteractions.mjs";
 const dateSelector = document.querySelector("#date-filter");
 const cardSection = document.querySelector(".posts-container");
 
@@ -17,7 +19,7 @@ export function postCardTemplate(json) { //se om man kan modulere koden!
       (json.body && json.body.toLowerCase().includes(searchValue.toLowerCase()))
   );
 
-  searchedArray.forEach(({ body, created, author }) => {
+  searchedArray.forEach(({ body, created, author, id }) => {
     const date = new Date(created);
     const formatDate = (date) => {
       return date.getDate() + "-" + date.getMonth() + "-" + date.getFullYear();
@@ -76,12 +78,35 @@ export function postCardTemplate(json) { //se om man kan modulere koden!
       postEdit.href = "#";
       postEdit.innerText = "Edit";
       postInteractions.append(postEdit);
+      postEdit.addEventListener("click", () => {
+        postEdit.style.display = "none";
+        postDelete.style.display = "none";
+        postContentText.innerText = "";
+
+        const editInput = document.createElement("textarea");
+        editInput.rows = "3"
+        editInput.classList.add("post-content-text")
+        editInput.style.width = "80%"
+        editInput.value = body;
+        postContentText.append(editInput);
+
+        const editSubmit = document.createElement("a");
+        editSubmit.href = "#"
+        editSubmit.innerText = "Update";
+        postInteractions.append(editSubmit);
+        editSubmit.addEventListener("click", () => {
+          updatePost(editInput.value, id)
+        })
+      });
   
       const postDelete = document.createElement("a");
       postDelete.href = "#";
       postDelete.classList.add("ms-3");
       postDelete.innerText = "Delete";
       postInteractions.append(postDelete);
+      postDelete.addEventListener("click", () => {
+        deletePost(id);
+      })
     }
   });
 }

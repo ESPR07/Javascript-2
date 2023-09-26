@@ -1,12 +1,13 @@
-import { API_SOCIAL_POSTS_URL } from "./components/urls.mjs";
+import { API_SOCIAL_PROFILE_URL } from "./components/urls.mjs";
 import { apiFetch } from "./components/apiFetch.mjs";
 import { postCardTemplate } from "./components/renderHTML.mjs";
-import { makePost } from "./components/makePost.mjs";
+import { makePost } from "./components/postInteractions.mjs";
 const accessToken = localStorage.getItem("userToken");
 const searchButton = document.querySelector(".searchbar");
 const submitPostButton = document.querySelector(".submit-post-button");
 const dateSelector = document.querySelector("#date-filter");
-console.log(searchbar)
+const cardSection = document.querySelector(".posts-container");
+const loggedInUser = localStorage.getItem("name");
 
 /**
  * Function that calls on all functions needed for HTML render.
@@ -19,9 +20,9 @@ function createHTML() {
   };
 
   apiFetch(
-    `${API_SOCIAL_POSTS_URL}?limit=10&_author=true/`,
+    `${API_SOCIAL_PROFILE_URL}/${loggedInUser}/posts?limit=10&_author=true`,
     authorizationHeader,
-    logging
+    postCardTemplate
   );
 }
 
@@ -44,7 +45,3 @@ function createHTMLFiltered(event) {
 dateSelector.addEventListener("input", createHTMLFiltered);
 searchButton.addEventListener("input", createHTMLFiltered);
 submitPostButton.addEventListener("click", makePost);
-
-function logging(json) {
-  console.log(json)
-}

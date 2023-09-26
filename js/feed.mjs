@@ -1,7 +1,7 @@
 import { API_SOCIAL_POSTS_URL } from "./components/urls.mjs";
 import { apiFetch } from "./components/apiFetch.mjs";
 import { postCardTemplate } from "./components/renderHTML.mjs";
-import { makePost } from "./components/makePost.mjs";
+import { makePost } from "./components/postInteractions.mjs";
 const accessToken = localStorage.getItem("userToken");
 const searchButton = document.querySelector(".searchbar");
 const submitPostButton = document.querySelector(".submit-post-button");
