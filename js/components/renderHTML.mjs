@@ -7,6 +7,7 @@ const cardSection = document.querySelector(".posts-container");
  */
 export function postCardTemplate(json) { //se om man kan modulere koden!
   const searchValue = document.querySelector(".searchbar").value;
+  const loggedEmail = localStorage.getItem("email");
   const filteredArray = json.filter((json) =>
     json.created.includes(dateSelector.value)
   );
@@ -70,15 +71,17 @@ export function postCardTemplate(json) { //se om man kan modulere koden!
     postInteractions.classList.add("justify-content-end");
     postContent.append(postInteractions);
 
-    const postEdit = document.createElement("a");
-    postEdit.href = "#";
-    postEdit.innerText = "Edit";
-    postInteractions.append(postEdit);
-
-    const postDelete = document.createElement("a");
-    postDelete.href = "#";
-    postDelete.classList.add("ms-3");
-    postDelete.innerText = "Delete";
-    postInteractions.append(postDelete);
+    if(author.email === loggedEmail) {
+      const postEdit = document.createElement("a");
+      postEdit.href = "#";
+      postEdit.innerText = "Edit";
+      postInteractions.append(postEdit);
+  
+      const postDelete = document.createElement("a");
+      postDelete.href = "#";
+      postDelete.classList.add("ms-3");
+      postDelete.innerText = "Delete";
+      postInteractions.append(postDelete);
+    }
   });
 }

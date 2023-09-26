@@ -6,7 +6,7 @@ const accessToken = localStorage.getItem("userToken");
 const searchButton = document.querySelector(".searchbar");
 const submitPostButton = document.querySelector(".submit-post-button");
 const dateSelector = document.querySelector("#date-filter");
-const cardSection = document.querySelector(".posts-container");
+console.log(searchbar)
 
 /**
  * Function that calls on all functions needed for HTML render.
@@ -19,9 +19,9 @@ function createHTML() {
   };
 
   apiFetch(
-    `${API_SOCIAL_POSTS_URL}?limit=10&_author=true`,
+    `${API_SOCIAL_POSTS_URL}?limit=10&_author=true/`,
     authorizationHeader,
-    postCardTemplate
+    logging
   );
 }
 

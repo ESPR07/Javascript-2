@@ -22,6 +22,7 @@ export function login(event) {
 
 function setToken(json) {
   localStorage.setItem("userToken", json.accessToken);
-  localStorage.setItem("username", json.name)
+  localStorage.setItem("email", json.email);
+  localStorage.setItem("name", json.name);
   window.location.href = "/feed.html";
 }
