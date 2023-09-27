@@ -44,7 +44,3 @@ function createHTMLFiltered(event) {
 dateSelector.addEventListener("input", createHTMLFiltered);
 searchButton.addEventListener("input", createHTMLFiltered);
 submitPostButton.addEventListener("click", makePost);
-
-function logging(json) {
-  console.log(json)
-}
