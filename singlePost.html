@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="View all your beautiful posts." />
+    <link rel="icon" href="/images/tab-icon.webp" />
+    <link href="/dist/css/styles.css" rel="stylesheet" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="/js/singlePost.mjs"></script>
+    <title>Feed Page</title>
+  </head>
+  <body>
+    <header class="row">
+      <div
+        class="header-container container-fluid d-flex flex-direction-row align-items-center px-2"
+      >
+        <a href="/feed.html" class="header-logo"></a>
+        <div class="interactions d-flex w-100 justify-content-center">
+          <div class="dropdown">
+            <button
+              class="filter-button dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+            >
+              Filter
+            </button>
+            <ul class="dropdown-menu p-2">
+              <li>
+                <form class="date-filter">
+                  <label class="form-check-label" for="date-filter"
+                    >Posted:</label
+                  >
+                  <input type="date" id="date-filter" name="sort-post" />
+                </form>
+              </li>
+            </ul>
+          </div>
+          <input type="text" placeholder="Search" class="searchbar" />
+        </div>
+      </div>
+    </header>
+    <main class="row">
+      <div class="posts-container container-fluid col-9 mb-3"></div>
+    </main>
+  </body>
+</html>
