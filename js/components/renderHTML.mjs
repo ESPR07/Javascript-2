@@ -19,7 +19,7 @@ export function postCardTemplate(json) {
       (json.body && json.body.toLowerCase().includes(searchValue.toLowerCase()))
   );
 
-  searchedArray.forEach(({ body, created, author, id }) => {
+  searchedArray.forEach(({ body, title, created, author, id }) => {
     const date = new Date(created);
     const formatDate = (date) => {
       return date.getDate() + "-" + date.getMonth() + "-" + date.getFullYear();
@@ -65,6 +65,9 @@ export function postCardTemplate(json) {
 
     const postContentText = document.createElement("p");
     postContentText.classList.add("post-content-text");
+    if(body === "" || null || undefined){
+      postContentText.innerText = title;
+    }
     postContentText.innerText = body;
     postContent.append(postContentText);
 
