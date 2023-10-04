@@ -29,8 +29,11 @@ export function login(event) {
  * @param {object} json The JSON that is returned in a API Fetch.
  */
 function setToken(json) {
-  localStorage.setItem("userToken", json.accessToken);
-  localStorage.setItem("email", json.email);
-  localStorage.setItem("name", json.name);
-  window.location.href = "/feed.html";
+  if (json) {
+    localStorage.setItem("userToken", json.accessToken);
+    localStorage.setItem("email", json.email);
+    localStorage.setItem("name", json.name);
+  } else {
+    console.log("error");
+  }
 }

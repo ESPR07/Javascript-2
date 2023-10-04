@@ -48,9 +48,8 @@ export function postCardTemplate(json) {
     postTimePosted.innerText = formatDate(date);
     postInfo.append(postTimePosted);
 
-    const postContent = document.createElement("a");
+    const postContent = document.createElement("div");
     postContent.classList.add("post-content");
-    postContent.href = `/singlePost.html?id=${id}`;
     cardContainer.append(postContent);
 
     const userPostImage = document.createElement("a");
@@ -63,19 +62,28 @@ export function postCardTemplate(json) {
       userPostImage.style.backgroundImage = `url(${author.avatar})`;
     }
 
-    const postContentText = document.createElement("p");
+    const postContentContainer = document.createElement("div");
+    postContentContainer.classList.add("post-content-container");
+    postContentContainer.classList.add("w-100");
+    postContent.append(postContentContainer);
+
+    const postContentText = document.createElement("a");
     postContentText.classList.add("post-content-text");
-    if(body === "" || null || undefined){
+    postContentText.classList.add("text-decoration-none");
+    postContentText.classList.add("text-white");
+    postContentText.href = `/singlePost.html?id=${id}`;
+    postContentText.style.cursor = "pointer";
+    if (body === "" || null || undefined) {
       postContentText.innerText = title;
     }
     postContentText.innerText = body;
-    postContent.append(postContentText);
+    postContentContainer.append(postContentText);
 
     const postInteractions = document.createElement("div");
     postInteractions.classList.add("post-interactions");
     postInteractions.classList.add("d-flex");
     postInteractions.classList.add("justify-content-end");
-    postContent.append(postInteractions);
+    postContentContainer.append(postInteractions);
 
     if (author.email === loggedEmail) {
       const postEdit = document.createElement("a");
@@ -90,9 +98,9 @@ export function postCardTemplate(json) {
         const editInput = document.createElement("textarea");
         editInput.rows = "3";
         editInput.classList.add("post-content-text");
-        editInput.style.width = "80%";
+        editInput.classList.add("w-100");
         editInput.value = body;
-        postContentText.append(editInput);
+        postInteractions.append(editInput);
 
         const editSubmit = document.createElement("a");
         editSubmit.href = "#";
@@ -117,7 +125,7 @@ export function postCardTemplate(json) {
 
 /**
  * Renders a single post fetched by using ID
- * @param {object} json 
+ * @param {object} json
  */
 export function singleCardTemplate(json) {
   const loggedEmail = localStorage.getItem("email");
@@ -163,16 +171,26 @@ export function singleCardTemplate(json) {
     userPostImage.style.backgroundImage = `url(${json.author.avatar})`;
   }
 
+  const postContentContainer = document.createElement("div");
+  postContentContainer.classList.add("post-content-container");
+  postContentContainer.classList.add("w-100");
+  postContent.append(postContentContainer);
+
   const postContentText = document.createElement("p");
   postContentText.classList.add("post-content-text");
+  postContentText.classList.add("text-decoration-none");
+  postContentText.classList.add("text-white");
+  if (json.body === "" || null || undefined) {
+    postContentText.innerText = json.title;
+  }
   postContentText.innerText = json.body;
-  postContent.append(postContentText);
+  postContentContainer.append(postContentText);
 
   const postInteractions = document.createElement("div");
   postInteractions.classList.add("post-interactions");
   postInteractions.classList.add("d-flex");
   postInteractions.classList.add("justify-content-end");
-  postContent.append(postInteractions);
+  postContentContainer.append(postInteractions);
 
   if (json.author.email === loggedEmail) {
     const postEdit = document.createElement("a");
@@ -187,16 +205,16 @@ export function singleCardTemplate(json) {
       const editInput = document.createElement("textarea");
       editInput.rows = "3";
       editInput.classList.add("post-content-text");
-      editInput.style.width = "80%";
+      editInput.classList.add("w-100");
       editInput.value = json.body;
-      postContentText.append(editInput);
+      postInteractions.append(editInput);
 
       const editSubmit = document.createElement("a");
       editSubmit.href = "#";
       editSubmit.innerText = "Update";
       postInteractions.append(editSubmit);
       editSubmit.addEventListener("click", () => {
-        updatePost(editInput.value, json.id);
+        updatePost(editInput.value, id);
       });
     });
 
@@ -206,7 +224,7 @@ export function singleCardTemplate(json) {
     postDelete.innerText = "Delete";
     postInteractions.append(postDelete);
     postDelete.addEventListener("click", () => {
-      deletePost(json.id);
+      deletePost(id);
     });
   }
 }
