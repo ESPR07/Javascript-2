@@ -82,9 +82,9 @@ function lengthValidator(value, compareValue) {
  * @param {object} json Insert a json from a fetch 
  */
 function displayErrorMessage(json) {
-  if(json.statusCode = 400) {
-    registerErrorMessage.classList.remove("hidden");
+  if(json.id === Number) {
+    alert("Account has been created!");
   } else {
-    console.log("an error occured");
+    registerErrorMessage.classList.remove("hidden");
   }
 }
