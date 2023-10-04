@@ -1,5 +1,6 @@
 import { apiFetch } from "./apiFetch.mjs";
 import { API_SOCIAL_LOGIN_URL } from "./urls.mjs";
+const loginErrorMessage = document.querySelector(".login-error-message")
 
 /**
  * A function that passes in login information from the user to the API if email and password is valid.
@@ -29,11 +30,13 @@ export function login(event) {
  * @param {object} json The JSON that is returned in a API Fetch.
  */
 function setToken(json) {
-  if (json) {
+  if(json.accessToken === undefined) {
+    loginErrorMessage.classList.remove("hidden");
+  } else {
     localStorage.setItem("userToken", json.accessToken);
     localStorage.setItem("email", json.email);
     localStorage.setItem("name", json.name);
-  } else {
-    console.log("error");
+    window.location.href = "/feed.html";
   }
+
 }
