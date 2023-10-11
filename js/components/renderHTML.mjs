@@ -65,6 +65,7 @@ export function postCardTemplate(json) {
     const postContentContainer = document.createElement("div");
     postContentContainer.classList.add("post-content-container");
     postContentContainer.classList.add("w-100");
+    postContentContainer.classList.add("mx-3")
     postContent.append(postContentContainer);
 
     const postContentText = document.createElement("a");
