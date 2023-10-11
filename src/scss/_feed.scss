@@ -5,6 +5,7 @@
   min-height: 70px;
   min-width: 70px;
   @extend .image-default;
+  background-size: contain !important;
 }
 
 .filter-button {
@@ -20,8 +21,9 @@
   border: none;
 }
 
-.post1 {
+.post {
   color: var(--text-color);
+  margin-top: 3rem;
 }
 
 .user-name {
@@ -29,11 +31,14 @@
 }
 
 .post-content {
+  display: flex;
   border: 2px solid var(--text-color);
   background-color: var(--dark-box);
   min-height: 100px;
   position: relative;
   padding-block: 10px;
+  color: var(--text-color);
+  text-decoration: none;
 }
 .time-posted {
   color: var(--text-color);

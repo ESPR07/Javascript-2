@@ -6,8 +6,7 @@
     <meta name="description" content="Log in to start your journey!" />
     <link rel="icon" href="/images/tab-icon.webp">
     <link href="/dist/css/styles.css" rel="stylesheet" />
-    <script type="module" src="/js/components/register.mjs"></script>
-    <script type="module" src="/js/components/login.mjs"></script>
+    <script type="module" src="/js/index.mjs"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
@@ -40,19 +39,19 @@
                 placeholder = "eg. John Smith"
                 required
               />
-              <label for="email" class="form-label">Email:</label>
+              <label for="register-email" class="form-label">Email:</label>
               <input
                 type="email"
-                id="email"
+                id="register-email"
                 class="form-control register-email"
-                placeholder = "@noroff.no or @stud.noroff.no adresses"
+                placeholder = "@noroff.no or @stud.noroff.no adress"
                 required
               />
               <p class="hidden email-error text-danger text-center mt-2">Must be a noroff.no or stud.noroff.no adress</p>
-              <label for="password" class="form-label">Password:</label>
+              <label for="register-password" class="form-label">Password:</label>
               <input
                 type="password"
-                id="password"
+                id="register-password"
                 class="form-control register-password"
                 placeholder = "min 8 characters"
                 required
@@ -84,6 +83,7 @@
           required
           min-length = "8"
         />
+        <p class="login-error-message text-danger text-center mt-3 mb-0 hidden">Email and password is not matching an account</p>
         <button class="log-in-button btn btn-primary mt-3 w-100">Log In</button>
       </form>
       <a

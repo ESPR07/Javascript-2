@@ -10,19 +10,15 @@ $primary: rgba(0, 100, 0);
 $grid-gutter-width: 0;
 
 body {
-  min-height: 100vh;
   background-image: url("/images/background.webp");
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 header,
 footer {
   background-color: var(--interaction-bg);
-}
-
-.posts-container {
-  margin-top: 60px !important;
 }
 
 .modal-dialog * {
@@ -34,7 +30,7 @@ footer {
 }
 
 .image-default {
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }

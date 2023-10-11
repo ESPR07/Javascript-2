@@ -1,15 +1,11 @@
-import { API_BASE_URL } from "../index.mjs";
 import { apiFetch } from "./apiFetch.mjs";
-const API_SOCIAL_REGISTER_PATH = "/social/auth/register";
-const API_SOCIAL_REGISTER_URL = API_BASE_URL + API_SOCIAL_REGISTER_PATH;
-const registerForm = document.querySelector(".register-form");
-const submitRegister = document.querySelector(".submit-register");
+import { API_SOCIAL_REGISTER_URL } from "./urls.mjs";
 const registerErrorMessage = document.querySelector(".register-error-message");
 
 /**
  * A Function for registering the user, it checks for valid email and password as well as posts the info to the server.
  */
-function registerUser() {
+export function registerUser(event) {
   event.preventDefault();
   const registerNameInput = document.querySelector(".register-name").value;
   const registerEmailInput = document.querySelector(".register-email").value;
@@ -86,11 +82,9 @@ function lengthValidator(value, compareValue) {
  * @param {object} json Insert a json from a fetch 
  */
 function displayErrorMessage(json) {
-  if(json.statusCode = 400) {
-    registerErrorMessage.classList.remove("hidden");
+  if(json.id === Number) {
+    alert("Account has been created!");
   } else {
-    console.log("an error occured");
+    registerErrorMessage.classList.remove("hidden");
   }
 }
-
-submitRegister.addEventListener("click", registerUser);

@@ -1,12 +1,12 @@
-import { API_BASE_URL } from "../index.mjs";
 import { apiFetch } from "./apiFetch.mjs";
-const API_SOCIAL_LOGIN_PATH = "/social/auth/login";
-const API_SOCIAL_LOGIN_URL = API_BASE_URL + API_SOCIAL_LOGIN_PATH;
+import { API_SOCIAL_LOGIN_URL } from "./urls.mjs";
+const loginErrorMessage = document.querySelector(".login-error-message")
 
-const loginForm = document.querySelector(".log-in-form");
-const loginButton = document.querySelector(".log-in-button");
-
-function login(event) {
+/**
+ * A function that passes in login information from the user to the API if email and password is valid.
+ * @param {*} event Purely to prevent errors with the event property.
+ */
+export function login(event) {
   event.preventDefault();
   const loginEmail = document.querySelector(".log-in-email").value;
   const loginPassword = document.querySelector(".log-in-password").value;
@@ -25,10 +25,18 @@ function login(event) {
   apiFetch(API_SOCIAL_LOGIN_URL, accountInfo, setToken);
 }
 
+/**
+ * a function for storing the user information in local storage for access to the site.
+ * @param {object} json The JSON that is returned in a API Fetch.
+ */
 function setToken(json) {
-  console.log(json);
-  localStorage.setItem("userToken", json.accessToken);
-  window.location.href = "/feed.html";
-}
+  if(json.accessToken === undefined) {
+    loginErrorMessage.classList.remove("hidden");
+  } else {
+    localStorage.setItem("userToken", json.accessToken);
+    localStorage.setItem("email", json.email);
+    localStorage.setItem("name", json.name);
+    window.location.href = "/feed.html";
+  }
 
-loginButton.addEventListener("click", login);
+}

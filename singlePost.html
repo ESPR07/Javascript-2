@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="View all your beautiful posts." />
+    <meta name="description" content="View a beautiful posts." />
     <link rel="icon" href="/images/tab-icon.webp" />
     <link href="/dist/css/styles.css" rel="stylesheet" />
     <script
@@ -11,8 +11,8 @@
       integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
       crossorigin="anonymous"
     ></script>
-    <script type="module" src="/js/feed.mjs"></script>
-    <title>Feed Page</title>
+    <script type="module" src="/js/singlePost.mjs"></script>
+    <title>Selected Post</title>
   </head>
   <body>
     <header class="row">
@@ -47,23 +47,5 @@
     <main class="row">
       <div class="posts-container container-fluid col-9 mb-3"></div>
     </main>
-    <footer
-      class="make-posts row d-flex justify-content-center sticky-bottom py-4"
-    >
-      <div
-        class="container-fluid d-flex justify-content-center align-items-center col-md-9 col-11"
-      >
-        <a href="/profile.html" class="profile-image"></a>
-        <form class="post-text-form w-100">
-          <textarea
-            class="post-text h-100"
-            placeholder="Write something about your day!"
-          ></textarea>
-          <div class="make-post-features w-100 d-flex justify-content-end">
-            <button class="submit-post-button dark-button">Post</button>
-          </div>
-        </form>
-      </div>
-    </footer>
   </body>
 </html>
